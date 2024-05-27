@@ -13,6 +13,7 @@ BASE_PATH = Path(__file__).resolve().parent
 templates_path = str(os.getcwd()) + "/templates"
 templates = Jinja2Templates(directory=templates_path)
 
+
 app.mount("/static", StaticFiles(directory=BASE_PATH / "static"), name="static")
 
 # Mount the StealthPortal application
