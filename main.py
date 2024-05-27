@@ -1,3 +1,4 @@
+import os
 import uvicorn
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
@@ -9,9 +10,10 @@ from StealthPortal.wif_FastAPI.main import stealth
 app = FastAPI()
 
 BASE_PATH = Path(__file__).resolve().parent
-print(BASE_PATH)
+templates_path = str(os.getcwd()) + "/templates"
+templates = Jinja2Templates(directory=templates_path)
+
 app.mount("/static", StaticFiles(directory=BASE_PATH / "static"), name="static")
-templates = Jinja2Templates(directory=BASE_PATH / "templates")
 
 # Mount the StealthPortal application
 app.mount("/portal", stealth)
