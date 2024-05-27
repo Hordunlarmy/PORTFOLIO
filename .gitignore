@@ -1,0 +1,8 @@
+**/__pycache__/
+**/env
+**/privatekey.pem
+**/private_key.pem
+**/public_key.pem
+**/.vercel
+**/venv
+**/.env
