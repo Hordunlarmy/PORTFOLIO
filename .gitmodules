@@ -1,0 +1,3 @@
+[submodule "StealthPortal"]
+	path = StealthPortal
+	url = https://github.com/Hordunlarmy/StealthPortal
