@@ -1,14 +1,15 @@
 services:
-  portfolio:
+  buildkit:
+    image: buildkit:latest
+    container_name: buildkit
     build: .
-    container_name: portfolio
     command: >
       uvicorn main:app 
       --host 0.0.0.0 
       --port 8000 
       --reload
     ports:
-      - "8014:8000"
+      - "1997:8000"
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000"]
       interval: 60s
